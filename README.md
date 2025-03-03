@@ -45,7 +45,7 @@ pip install vllm==0.6.3
 - hendrycks_math  
 - hendrycks_math_500
 
-*Note:* For models above 32B, using long CoT on the `hendrycks_math` task (5000 samples) might take significantly long time.
+*Note:* For long CoT fine-tuned 32B models, the evaluation on the `hendrycks_math` task (5000 samples) might take significantly long time. It is suggested to use `hendrycks_math_500` for evaluation.
 
 **Model Selection:**  
 We have open-sourced models for Short CoT, Long CoT, Mix-long, and Mix-large on Hugging Face. You can directly use these models to evaluate their performance. Additionally, we provide datasets for long CoT, short CoT, distilled large teacher models, distilled small teacher models, as well as Mix-Long and Mix-Large, so you can fine-tune your model of choice.
