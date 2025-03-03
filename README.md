@@ -33,8 +33,8 @@ pip install vllm==0.6.3
 
 ## Evaluation
 
-- For models with up to 7B parameters, modify the configuration in `test.sh`. 
-- For models larger than 14B, adjust the parameters in `test_lora.sh`.
+- For models with up to 7B parameters, modify the configuration in `lm-evaluation-harness/test.sh`. 
+- For models larger than 14B, adjust the parameters in `lm-evaluation-harness/test_lora.sh`.
 
 **Available tasks:**
 
@@ -51,6 +51,9 @@ pip install vllm==0.6.3
 We have open-sourced models for Short CoT, Long CoT, Mix-long, and Mix-large on Hugging Face. You can directly use these models to evaluate their performance. Additionally, we provide datasets for long CoT, short CoT, distilled large teacher models, distilled small teacher models, as well as Mix-Long and Mix-Large, so you can fine-tune your model of choice.
 
 Hugging Face link: [https://huggingface.co/UWNSL](https://huggingface.co/UWNSL)
+
+**GPU Setting:**  
+Adjust 'tensor_parallel_size' and 'data_parallel_size' in the script to fit your GPU setting.
 
 **Judging:**  
 We found that rule-based matching has many edge cases and failure instances. Therefore, our scoring includes two steps:
