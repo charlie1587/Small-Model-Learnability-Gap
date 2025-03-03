@@ -5,9 +5,9 @@ dataset_path: json
 dataset_kwargs:
   trust_remote_code: true
   data_files: 
-    # train: lm-evaluation-harness/math_eval_data/amc23/test.jsonl
-    # validation: lm-evaluation-harness/math_eval_data/amc23/test.jsonl
-    test: lm-evaluation-harness/math_eval_data/amc23/test.jsonl
+    train: math_eval_data/amc23/test.jsonl
+    validation: math_eval_data/amc23/test.jsonl
+    test: math_eval_data/amc23/test.jsonl
 process_docs: !function utils.process_docs
 dataset_name: null
 output_type: generate_until

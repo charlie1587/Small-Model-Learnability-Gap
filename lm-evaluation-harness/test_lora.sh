@@ -32,8 +32,11 @@ for task in "${tasks[@]}"; do
 
         SANTIZED_MODEL_SAVE_LABEL=$(echo ${model} | sed 's/\//__/g')
         echo ${SANTIZED_MODEL_SAVE_LABEL}
-        python math_metric_llm_eval_general.py --directory_path lm-evaluation-harness/${output_path}/${SANTIZED_MODEL_SAVE_LABEL} --task ${task}
-
+        if [ "$task" != "gsm8k_cot_zeroshot" ]; then
+            python math_metric_llm_eval_general.py --directory_path ${output_path}/${SANTIZED_MODEL_SAVE_LABEL} --task ${task}
+        elif [ "$task" == "gsm8k_cot_zeroshot" ]; then
+            python math_metric_gsm8k.py --directory_path ${output_path}/${SANTIZED_MODEL_SAVE_LABEL} 
+        fi
 
         
     done

@@ -58,7 +58,7 @@ Adjust 'tensor_parallel_size' and 'data_parallel_size' in the script to fit your
 **Judging:**  
 We found that rule-based matching has many edge cases and failure instances. Therefore, our scoring includes two steps:
 1. Initial rule-based matching.
-2. For any incorrect result from this matching, use `Qwen2.5-32B-Instruct` to directly compare the model generated answer in the "boxed{}" with the ground truthfinal answer.
+2. For any incorrect result from this matching, use `Qwen2.5-32B-Instruct` to directly compare the model generated answer in the "boxed{}" with the ground truthfinal answer. `Qwen2.5-7B-Instruct` as a judge may still have bad cases sometimes.
 
 Execute the following command to score the results:
 

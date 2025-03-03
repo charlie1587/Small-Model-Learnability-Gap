@@ -14,25 +14,24 @@ from tqdm import tqdm
 from typing import Dict, List
 import datasets
 from vllm import LLM, SamplingParams
-
-
 import argparse
-
 
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--directory_path', type=str, required=True, help='The directory path to be checked')
 parser.add_argument('--task', type=str, required=True)
+parser.add_argument('--model_name', type=str, default='Qwen/Qwen2.5-32B-Instruct')
+parser.add_argument('--tensor_parallel_size', type=int, default=4)
+
 args = parser.parse_args()
 directory_path = args.directory_path
 task = args.task
-
-
+check_model_name = args.model_name
+tensor_parallel_size = args.tensor_parallel_size
 
 def check_answers_with_llm(problematic_batch):
 
-    model_name = 'Qwen/Qwen2.5-32B-Instruct'
-    llm = LLM(model=model_name, dtype="float16", tensor_parallel_size=4)  
+    llm = LLM(model=check_model_name, dtype="float16", tensor_parallel_size=tensor_parallel_size)  
     
     input_texts = []
     for index, problem, resp_answer, ground_answer in problematic_batch:
@@ -305,7 +304,6 @@ for filename in os.listdir(directory_path):
                 else:
                     problem = data['doc']['problem']
                     answer = data['doc']['answer']
-                # solution = data['doc']['solution']
                 resp = data['resps'][0][0]
                 
                 resp_answer = remove_boxed(last_boxed_only_string(resp)) if last_boxed_only_string(resp) is not None else None

@@ -1,6 +1,6 @@
 
-models=("UWNSL/Qwen2.5-3B-Instruct_Short_CoT" "UWNSL/Qwen2.5-3B-Instruct_Long_CoT")
-tasks=("AIME" "AMC" "Olympiad" "gsm8k_cot_zeroshot" "hendrycks_math")
+models=("UWNSL/Qwen2.5-3B-Instruct_Long_CoT" "UWNSL/Qwen2.5-3B-Instruct_Short_CoT")
+tasks=("AIME" "AMC" "Olympiad" "hendrycks_math_500" "gsm8k_cot_zeroshot" "hendrycks_math")
 
 max_model_tokens=16000
 max_gen_tokens=16000
@@ -22,10 +22,14 @@ for task in "${tasks[@]}"; do
             --apply_chat_template \
 
 
-
         SANTIZED_MODEL_SAVE_LABEL=$(echo ${model} | sed 's/\//__/g')
         echo ${SANTIZED_MODEL_SAVE_LABEL}
-        python math_metric_llm_eval_general.py --directory_path lm-evaluation-harness/${output_path}/${SANTIZED_MODEL_SAVE_LABEL} --task ${task}
+        if [ "$task" != "gsm8k_cot_zeroshot" ]; then
+            python math_metric_llm_eval_general.py --directory_path ${output_path}/${SANTIZED_MODEL_SAVE_LABEL} --task ${task}
+        elif [ "$task" == "gsm8k_cot_zeroshot" ]; then
+            python math_metric_gsm8k.py --directory_path ${output_path}/${SANTIZED_MODEL_SAVE_LABEL} 
+        fi
+
 
     done
 done
