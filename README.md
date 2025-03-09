@@ -79,9 +79,6 @@ pip install vllm==0.6.3
 
 *Note:* For long CoT fine-tuned 32B models, the evaluation on the `hendrycks_math` task (5000 samples) might take significantly long time. It is suggested to use `hendrycks_math_500` for evaluation.
 
-**Model Selection:**  
-You can directly use our [open-sourced models] (https://huggingface.co/UWNSL)to evaluate their performance. You can also evaluate your fine-tuned models.
-
 **GPU Setting:**  
 Adjust 'tensor_parallel_size' and 'data_parallel_size' in the script to fit your GPU setting.
 
