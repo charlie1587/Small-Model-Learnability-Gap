@@ -20,18 +20,48 @@ Large language models (LLMs) excel in complex reasoning tasks, and distilling th
 ```
 git clone https://github.com/Small-Model-Gap/Small-Model-Learnability-Gap
 ```
+
+## Model Training
+You can directly use the checkpoints we have already trained. We have open-sourced models for Short CoT, Long CoT, Mix-long, and Mix-large on Hugging Face. The fine-tuned models for Long CoT and Short CoT include qwen2.5 in sizes 0.5B, 1.5B, 3B, 7B, 14B (lora), 32B (lora), as well as llama3.2 in sizes 1B, 3B, Llama3.1-8B, and Llama3.3-70B (lora). You can directly use these models to evaluate their performances.
+
+Hugging Face link: [https://huggingface.co/UWNSL](https://huggingface.co/UWNSL)
+
+Additionally, we provide datasets for Long CoT, Short CoT, distilled large teacher models, distilled small teacher models, as well as Mix-Long and Mix-Large, so you can also fine-tune your model of choice. 
+
+**Build Environment**
+```
+cd Small-Model-Learnability-Gap/LLaMA-Factory
+conda create -n llama_factory python=3.10
+conda activate llama_factory
+pip install -e ".[torch,metrics]"
+pip install deepspeed
+```
+---
+
+We use the LLaMA-Factory framework for model training, and the training scripts are provided here. You can directly use the command `bash train.sh` to train Qwen/Qwen2.5-3B-Instruct with Long CoT data, Short CoT data, and Mix-long data (with a Long CoT: Short CoT ratio of 1:4):
+
+```bash
+FORCE_TORCHRUN=1 llamafactory-cli train exp/MATH_short_CoT.yaml
+
+FORCE_TORCHRUN=1 llamafactory-cli train exp/MATH_long_CoT.yaml
+
+FORCE_TORCHRUN=1 llamafactory-cli train exp/MATH_mix.yaml
+```
+
+You can also modify the YAML configuration to use different models and datasets, adjust the templates, and change the save paths. Please manually add additional dataset information in data/dataset_info.json. For more information, you can refer to the official documentation [LLaMA-Factory ](https://github.com/hiyouga/LLaMA-Factory).
+
+
+## Evaluation
+
 **Build Environment**
 ```
 cd Small-Model-Learnability-Gap/lm-evaluation-harness
 conda create -n Small-Model-Gap python=3.10
 conda activate Small-Model-Gap
-pip install . -e
+pip install -e .
 pip install vllm==0.6.3
 ```
-
 ---
-
-## Evaluation
 
 - For models with up to 7B parameters, modify the configuration in `lm-evaluation-harness/test.sh`. 
 - For models larger than 14B, adjust the parameters in `lm-evaluation-harness/test_lora.sh`.
@@ -48,9 +78,9 @@ pip install vllm==0.6.3
 *Note:* For long CoT fine-tuned 32B models, the evaluation on the `hendrycks_math` task (5000 samples) might take significantly long time. It is suggested to use `hendrycks_math_500` for evaluation.
 
 **Model Selection:**  
-We have open-sourced models for Short CoT, Long CoT, Mix-long, and Mix-large on Hugging Face. You can directly use these models to evaluate their performance. Additionally, we provide datasets for long CoT, short CoT, distilled large teacher models, distilled small teacher models, as well as Mix-Long and Mix-Large, so you can fine-tune your model of choice.
+You can directly use our [open-sourced models] (https://huggingface.co/UWNSL)to evaluate their performance. You can also evaluate your fine-tuned models.
 
-Hugging Face link: [https://huggingface.co/UWNSL](https://huggingface.co/UWNSL)
+
 
 **GPU Setting:**  
 Adjust 'tensor_parallel_size' and 'data_parallel_size' in the script to fit your GPU setting.
@@ -111,7 +141,7 @@ For details on adding new tasks, please refer to the [lm-evaluation-harness docu
 
 ## Acknowledgements
 
-This repository is built upon [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness). We would like to thank all contributors for their support.
+This repository is built upon [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) and [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness). We would like to thank all contributors for their support.
 
 ---
 

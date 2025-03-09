@@ -692,5 +692,12 @@
         "prompt": "problem",
         "response": "solution"
     }
+  },
+  "MATH_training_split_short_cot": {
+    "hf_hub_url": "UWNSL/MATH_training_split_short_cot",
+    "columns": {
+        "prompt": "problem",
+        "response": "solution"
+    }
   }
 }
