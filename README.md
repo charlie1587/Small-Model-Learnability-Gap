@@ -38,7 +38,7 @@ pip install deepspeed
 ```
 ---
 
-We use the LLaMA-Factory framework for model training, and the training scripts are provided here. You can directly use the command `bash train.sh` to train Qwen/Qwen2.5-3B-Instruct with Long CoT data, Short CoT data, and Mix-long data (with a Long CoT: Short CoT ratio of 1:4):
+We use the LLaMA-Factory framework for model training, and the training scripts are provided here. You can directly use the command `bash train.sh` to train Qwen/Qwen2.5-3B-Instruct with Long CoT data, Short CoT data, and Mix-Long data (with a Long CoT: Short CoT ratio of 1:4):
 
 ```bash
 FORCE_TORCHRUN=1 llamafactory-cli train exp/MATH_short_CoT.yaml
@@ -52,6 +52,8 @@ You can also modify the YAML configuration to use different models and datasets,
 
 
 ## Evaluation
+
+We use [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness) to evaluate the performance of the fine-tuned models.
 
 **Build Environment**
 ```
@@ -79,8 +81,6 @@ pip install vllm==0.6.3
 
 **Model Selection:**  
 You can directly use our [open-sourced models] (https://huggingface.co/UWNSL)to evaluate their performance. You can also evaluate your fine-tuned models.
-
-
 
 **GPU Setting:**  
 Adjust 'tensor_parallel_size' and 'data_parallel_size' in the script to fit your GPU setting.
