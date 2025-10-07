@@ -1,0 +1,6 @@
+{
+    "none_resp_answer_count": 20,
+    "exact_match_accuracy": 0.06666666666666667,
+    "llm_check_result_accuracy": 0.1,
+    "none_llm_check_result_count": 0
+}

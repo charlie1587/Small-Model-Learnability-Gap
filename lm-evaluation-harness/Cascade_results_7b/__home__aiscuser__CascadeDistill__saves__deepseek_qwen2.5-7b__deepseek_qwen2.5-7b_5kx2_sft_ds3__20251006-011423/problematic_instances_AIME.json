@@ -1,0 +1,29 @@
+[
+    {
+        "index": 3,
+        "problem": "Define $f(x)=|| x|-\\tfrac{1}{2}|$ and $g(x)=|| x|-\\tfrac{1}{4}|$. Find the number of intersections of the graphs of \\[y=4 g(f(\\sin (2 \\pi x))) \\quad\\text{ and }\\quad x=4 g(f(\\cos (3 \\pi y))).\\]",
+        "resp_answer": "at 2. Wait to   1. Wait. Wait to  (boxed.\n\nWait.\n\nWait\n\nWait from to 3{.\n\nWait. Wait =quad).\n\nWait. Wait.\n\nWait to 1. Hmm to 2 to 6 to compute at in. Wait. Wait. Wait product to  |\n\nWait have have have at at(\\\n\nWait. Wait. Wait. Wait at non. Wait getting stuck at{.\n\nWait. Wait at.\n\nWait to  #.\n\nWait. Wait product f, Wait to 3{.\n\nWait. Wait's. Wait stuck. Wait. Wait to 2. Wait to 1. Wait to 1. Hmm. Wait to 2. Wait. Wait. Wait. Wait to  2. Wait. Wait. Wait to 2.\n\nWait. Wait. Wait. Wait. Wait. Wait to 2. Wait to 3. Wait. Wait. Wait. Wait. Wait. Wait. Wait. Wait. Wait. Wait. Wait.\n\nWait.\n\nWait to 1. Wait, Wait. Wait to    ( Wait to 1. Wait.\n\nWait. Wait.\n\nWait.\n\nWait. Wait to   and. Wait. Wait. Wait to   1, wait, wait. Wait. Wait to  and. Wait. Wait. Wait. Wait. Wait. Wait. Wait. Wait to 0. Wait. Wait. Wait. Wait. Wait. Wait. Wait. Wait to 1. Wait from. Wait getting to  and. Wait to  (.\n\nWait to  (...\n\n**\n\nWait. Wait to  ( Wait to   and. Wait. Wait to 2 ( Wait So at at. Wait. Hmm to   2 to 1.\n\nWait.\n\nWait( (.\n\nFinal a  ( Wait't.\n\nWait  ( Wait{ ( Wait. Wait to 2, ...</</boxed.\n\nWait Let Wait. Wait at 1, and.\n\nWait Wait. Wait.\n\nWait. Wait at).\n\nWait. Wait. - - -.\n\nWait, and.\n\nWait** Wait to 1.\n\nWait.\n\nWait, Wait**</.\n\nWait. Wait. Wait. Wait  1.\n\nWait Wait at to 1, Wait    2).\n\n Wait. Wait. Wait. Wait. Wait  1 (.\n\nWait\n\nWait.\n\nWait. Wait. Wait     (quad\n\nWait, Wait to    π\n\n\nWait. Wait Wait.\n\nWait Final\n\nWait.\n\nWait.\n\nWait Let 1 to 1 to compute. Wait. Wait =quad\n\nWait non k Wait   ( ( ( Wait   1).\n\nWait't to  (quad to  (quad\n\n**\n\nWait, and at need need at to  to  (... Wait, wait (boxed atboxed at, Wait to      to write'sboxed at. Wait't.\n\nWait to\n\nWait need at at at. Wait to  2 to 1 to boxed\n\n.\n\nWait, wait at. Wait need at. Wait( to 4. Wait. Wait at. Wait at. Wait product need atne 4. Wait 1/boxed at at at. Wait. Wait at. Wait at. Wait't. Wait to 1. Wait Wait't.\n\n Wait to 1boxed at to compute kboxed to 2\n\nWait Let.\n\nWait.\n\nWait.\n\nWait Final Wait to  =t ( Wait from to  Wait to  Wait. Wait product.\n\nWait.\n\nWait. Wait to irst to 1boxed.\n\n Wait's.\n\nWait Wait at to  - -\n\n\n.\n\nWait.\n\nWait. Wait to  Wait.\n\nWait. Wait. Wait to  2boxed Let\n\nWait to 2(\\\n\nWait. Wait to  ( Wait. Wait. Wait. Wait. Wait. Wait. Wait. Wait. Wait. Wait. Wait. Let. Let to 2 =boxed at's at at, .........\n\n\n Wait. Wait to  ( Wait. Finalboxed Final. Wait. Wait. Final. Wait to irst at from to 2. Wait at's. Wait.",
+        "answer": "385",
+        "exact_match": 0,
+        "llm_check_result": 0,
+        "llm_check_result_reason": "LLM check result: False"
+    },
+    {
+        "index": 19,
+        "problem": "Let $\\omega\\neq 1$ be a 13th root of unity. Find the remainder when\n\\[\\prod_{k=0}^{12}(2-2\\omega^k+\\omega^{2k})\\]\nis divided by 1000.",
+        "resp_answer": "to compute product product product product product product me product \\prod product product product \\",
+        "answer": "321",
+        "exact_match": 0,
+        "llm_check_result": 0,
+        "llm_check_result_reason": "LLM check result: False"
+    },
+    {
+        "index": 24,
+        "problem": "Let $x,y$ and $z$ be positive real numbers that satisfy the following system of equations:\n\\[\\log_2\\left({x \\over yz}\\right) = {1 \\over 2}\\]\\[\\log_2\\left({y \\over xz}\\right) = {1 \\over 3}\\]\\[\\log_2\\left({z \\over xy}\\right) = {1 \\over 4}\\]\nThen the value of $\\left|\\log_2(x^4y^3z^2)\\right|$ is $\\tfrac{m}{n}$ where $m$ and $n$ are relatively prime positive integers. Find $m+n$.",
+        "resp_answer": "33",
+        "answer": "033",
+        "exact_match": 0,
+        "llm_check_result": 1,
+        "llm_check_result_reason": "LLM check result: True"
+    }
+]

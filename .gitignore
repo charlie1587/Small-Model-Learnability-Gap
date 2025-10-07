@@ -171,3 +171,6 @@ cython_debug/
 .pypirc
 
 
+lm-evaluation-harness/long_cot_vs_short_cot
+lm-evaluation-harness/Cascade_results
+lm-evaluation-harness/long_cot_vs_short_cot_2
