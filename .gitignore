@@ -1,3 +1,4 @@
+lm-evaluation-harness/test_math_verify
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
